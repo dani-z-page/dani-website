@@ -215,6 +215,11 @@ img, svg { max-width: 100%; }
 .listrow__item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
 .listrow__marker { color: var(--accent); font-size: 15px; line-height: 1.5; }
 .listrow__text { font-size: 15.5px; line-height: 1.5; color: var(--ink-85); }
+/* Check-in-circle markers (opt-in via .listrow--check) */
+.listrow--check .listrow__item { align-items: flex-start; }
+.listrow--check .listrow__marker { flex: 0 0 26px; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); border: 1.5px solid currentColor; border-radius: 50%; margin-top: 1px; font-size: 0; }
+.listrow--check .listrow__marker svg { width: 13px; height: 13px; display: block; }
+.band--light .listrow--check .listrow__marker { color: var(--accent-deep); }
 
 /* NumberedList (The pattern) */
 .numlist { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
