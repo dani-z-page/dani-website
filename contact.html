@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -60,13 +60,50 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section class="section wrap" aria-labelledby="form-h">
+    <p class="eyebrow">Send a message</p>
+    <h2 class="h2" id="form-h" style="margin-bottom:16px;max-width:24ch">Tell me what you're looking to solve.</h2>
+    <p class="body" style="max-width:56ch;margin-bottom:44px">Share a little about what's going on and I'll get back to you. There's no wrong way to start.</p>
+
+    <form class="cform" id="contact-form" action="https://formspree.io/f/xbdnzjqd" method="POST">
+      <div class="cform__row">
+        <div class="cform__field">
+          <label class="cform__label" for="first_name">First name</label>
+          <input class="cform__input" id="first_name" name="First name" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="cform__field">
+          <label class="cform__label" for="last_name">Last name</label>
+          <input class="cform__input" id="last_name" name="Last name" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="cform__field">
+        <label class="cform__label" for="email">Email</label>
+        <input class="cform__input" id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="cform__field">
+        <label class="cform__label" for="message">Why are you reaching out — what are you looking to solve?</label>
+        <textarea class="cform__input cform__textarea" id="message" name="What they're looking to solve" rows="6" required placeholder="The metric that's underperforming, what's been tried, where leadership disagrees…"></textarea>
+      </div>
+
+      <!-- Formspree settings: email subject + no-JS redirect fallback to the thank-you page -->
+      <input type="hidden" name="_subject" value="New inquiry from daniellezimmerman.co">
+      <input type="hidden" name="_next" value="https://daniellezimmerman.co/thank-you.html">
+      <!-- Honeypot: real people leave this empty; bots fill it and get blocked -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="cform__error" id="cform-error" role="alert" hidden>Sorry — something went wrong sending your message. Please email <a href="mailto:danielle@daniellezimmerman.co">danielle@daniellezimmerman.co</a> directly.</p>
+      <button class="btn-ghost btn-ghost--cta cform__submit" type="submit">Send message</button>
+    </form>
+  </section>
+
   <!-- CONTACT DETAILS -->
   <section class="band band--surface" aria-labelledby="contact-h">
     <div class="section wrap">
       <p class="eyebrow">Contact</p>
       <h2 class="h2" id="contact-h" style="margin-bottom:36px">Reach out directly.</h2>
       <div class="contact-details">
-        <p class="contact-row"><span>Email:</span> <a href="mailto:dani.zimmerman@gmail.com">dani.zimmerman@gmail.com</a></p>
+        <p class="contact-row"><span>Email:</span> <a href="mailto:danielle@daniellezimmerman.co">danielle@daniellezimmerman.co</a></p>
         <p class="contact-row"><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/dani-zimmerman" target="_blank" rel="noopener">linkedin.com/in/dani-zimmerman</a></p>
         <p class="contact-row"><span>Website:</span> <a href="https://daniellezimmerman.co">daniellezimmerman.co</a></p>
       </div>
@@ -74,7 +111,7 @@
            Replace the href below with the live scheduling URL (e.g. Calendly/SavvyCal) when
            available. Until then the button uses the working email path — no broken or
            visible-TODO link on the live site. -->
-      <a class="btn-ghost btn-ghost--cta" href="mailto:dani.zimmerman@gmail.com?subject=Growth%20conversation">Schedule a conversation</a>
+      <a class="btn-ghost btn-ghost--cta" href="mailto:danielle@daniellezimmerman.co?subject=Growth%20conversation">Schedule a conversation</a>
     </div>
   </section>
 
@@ -82,10 +119,44 @@
 
 <footer>
   <div class="footer">
-    <span class="footer__left">Danielle Zimmerman · <a href="mailto:dani.zimmerman@gmail.com">dani.zimmerman@gmail.com</a> · <a href="https://www.linkedin.com/in/dani-zimmerman" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span class="footer__left">Danielle Zimmerman · <a href="mailto:danielle@daniellezimmerman.co">danielle@daniellezimmerman.co</a> · <a href="https://www.linkedin.com/in/dani-zimmerman" target="_blank" rel="noopener">LinkedIn</a></span>
     <span class="footer__right">© 2026 Danielle Zimmerman · Fractional Growth Executive for B2B SaaS</span>
   </div>
 </footer>
+
+<script>
+  // Submit the contact form to Formspree without leaving the site, then send
+  // the visitor to our own thank-you page. Falls back to a plain POST if JS
+  // is unavailable (Formspree's _next field handles the redirect in that case).
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var btn = form.querySelector('.cform__submit');
+    var err = document.getElementById('cform-error');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true;
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          throw new Error('Formspree returned ' + res.status);
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+        err.hidden = false;
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
