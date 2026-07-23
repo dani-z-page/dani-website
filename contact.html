@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=7">
+  <link rel="stylesheet" href="assets/css/styles.css?v=8">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -35,67 +35,51 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <header class="section--hero wrap" style="padding-bottom:80px" aria-labelledby="page-title">
-    <p class="eyebrow eyebrow--hero">Start a conversation</p>
-    <h1 class="h1" id="page-title" style="max-width:14ch">Tell me where growth stalled.</h1>
-    <div style="max-width:60ch">
-      <p class="body">A first conversation is a practical discussion about what you are seeing, what the organization currently believes, and where I would begin looking.</p>
-      <p class="body" style="margin:0">It is not a sales presentation.</p>
+  <!-- HERO + CONTACT FORM -->
+  <header class="section--hero wrap" style="padding-bottom:100px" aria-labelledby="page-title">
+    <div class="contact-hero">
+      <div class="contact-hero__intro">
+        <p class="eyebrow eyebrow--hero">Start a conversation</p>
+        <h1 class="h1" id="page-title" style="max-width:14ch">Tell me where growth stalled.</h1>
+        <div style="max-width:46ch">
+          <p class="body">A first conversation is a practical discussion about what you are seeing, what the organization currently believes, and where I would begin looking.</p>
+          <p class="body" style="margin:0">It is not a sales presentation.</p>
+        </div>
+      </div>
+      <div class="contact-hero__form">
+        <p class="eyebrow" style="margin-bottom:24px">Send a message</p>
+        <form class="cform" id="contact-form" action="https://formspree.io/f/xbdnzjqd" method="POST">
+          <div class="cform__row">
+            <div class="cform__field">
+              <label class="cform__label" for="first_name">First name</label>
+              <input class="cform__input" id="first_name" name="First name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="cform__field">
+              <label class="cform__label" for="last_name">Last name</label>
+              <input class="cform__input" id="last_name" name="Last name" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="cform__field">
+            <label class="cform__label" for="email">Email</label>
+            <input class="cform__input" id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="cform__field">
+            <label class="cform__label" for="message">Why are you reaching out — what are you looking to solve?</label>
+            <textarea class="cform__input cform__textarea" id="message" name="What they're looking to solve" rows="6" required placeholder="e.g. the metric that's underperforming, the leading theories inside the company, what's already been tried, where leadership disagrees, and any board or investor timing…"></textarea>
+          </div>
+
+          <!-- Formspree settings: email subject + no-JS redirect fallback to the thank-you page -->
+          <input type="hidden" name="_subject" value="New inquiry from daniellezimmerman.co">
+          <input type="hidden" name="_next" value="https://daniellezimmerman.co/thank-you.html">
+          <!-- Honeypot: real people leave this empty; bots fill it and get blocked -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <p class="cform__error" id="cform-error" role="alert" hidden>Sorry — something went wrong sending your message. Please email <a href="mailto:danielle@daniellezimmerman.co">danielle@daniellezimmerman.co</a> directly.</p>
+          <button class="btn-ghost btn-ghost--cta cform__submit" type="submit">Send message</button>
+        </form>
+      </div>
     </div>
   </header>
-
-  <!-- USEFUL CONTEXT (light band) -->
-  <section class="band band--light" aria-labelledby="context-h">
-    <div class="section wrap">
-      <p class="eyebrow">Useful context to bring</p>
-      <h2 class="h2" id="context-h" style="margin-bottom:44px;max-width:26ch">A few things that make the first conversation productive.</h2>
-      <div class="listrow" style="max-width:820px">
-        <div class="listrow__item"><span class="listrow__marker">—</span><span class="listrow__text">The metric or growth outcome that is underperforming</span></div>
-        <div class="listrow__item"><span class="listrow__marker">—</span><span class="listrow__text">The leading explanations inside the company</span></div>
-        <div class="listrow__item"><span class="listrow__marker">—</span><span class="listrow__text">What has already been tried</span></div>
-        <div class="listrow__item"><span class="listrow__marker">—</span><span class="listrow__text">Where leadership disagrees</span></div>
-        <div class="listrow__item"><span class="listrow__marker">—</span><span class="listrow__text">Any important timing, board, or investor context</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section class="section wrap" aria-labelledby="form-h">
-    <p class="eyebrow">Send a message</p>
-    <h2 class="h2" id="form-h" style="margin-bottom:16px;max-width:24ch">Tell me what you're looking to solve.</h2>
-    <p class="body" style="max-width:56ch;margin-bottom:44px">Share a little about what's going on and I'll get back to you. There's no wrong way to start.</p>
-
-    <form class="cform" id="contact-form" action="https://formspree.io/f/xbdnzjqd" method="POST">
-      <div class="cform__row">
-        <div class="cform__field">
-          <label class="cform__label" for="first_name">First name</label>
-          <input class="cform__input" id="first_name" name="First name" type="text" autocomplete="given-name" required>
-        </div>
-        <div class="cform__field">
-          <label class="cform__label" for="last_name">Last name</label>
-          <input class="cform__input" id="last_name" name="Last name" type="text" autocomplete="family-name" required>
-        </div>
-      </div>
-      <div class="cform__field">
-        <label class="cform__label" for="email">Email</label>
-        <input class="cform__input" id="email" name="email" type="email" autocomplete="email" required>
-      </div>
-      <div class="cform__field">
-        <label class="cform__label" for="message">Why are you reaching out — what are you looking to solve?</label>
-        <textarea class="cform__input cform__textarea" id="message" name="What they're looking to solve" rows="6" required placeholder="The metric that's underperforming, what's been tried, where leadership disagrees…"></textarea>
-      </div>
-
-      <!-- Formspree settings: email subject + no-JS redirect fallback to the thank-you page -->
-      <input type="hidden" name="_subject" value="New inquiry from daniellezimmerman.co">
-      <input type="hidden" name="_next" value="https://daniellezimmerman.co/thank-you.html">
-      <!-- Honeypot: real people leave this empty; bots fill it and get blocked -->
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-      <p class="cform__error" id="cform-error" role="alert" hidden>Sorry — something went wrong sending your message. Please email <a href="mailto:danielle@daniellezimmerman.co">danielle@daniellezimmerman.co</a> directly.</p>
-      <button class="btn-ghost btn-ghost--cta cform__submit" type="submit">Send message</button>
-    </form>
-  </section>
 
   <!-- CONTACT DETAILS -->
   <section class="band band--surface" aria-labelledby="contact-h">

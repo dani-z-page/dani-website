@@ -76,7 +76,7 @@ img, svg { max-width: 100%; }
 .wrap { max-width: 1320px; margin: 0 auto; padding-inline: 72px; }
 .wrap--graphic { padding-inline: 64px; }
 .section { padding-block: 112px; }
-.section--hero { padding: 96px 0 8px; }
+.section--hero { padding-top: 96px; padding-bottom: 8px; }
 .section--graphic { padding: 44px 0 40px; }
 .section--proof { padding: 0; }
 .section--closing { padding-block: 120px; text-align: center; }
@@ -393,6 +393,11 @@ img, svg { max-width: 100%; }
 .contact-details { display: flex; flex-direction: column; gap: 14px; margin: 0 0 40px; }
 .contact-row { font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.01em; color: var(--ink-72); }
 .contact-row span { color: var(--ink-50); }
+
+/* Contact hero — intro left, form right */
+.contact-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contact-hero__intro { padding-top: 6px; }
+@media (max-width: 900px) { .contact-hero { grid-template-columns: 1fr; gap: 48px; } }
 
 @media (max-width: 900px) {
   .move { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
