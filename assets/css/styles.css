@@ -220,6 +220,11 @@ img, svg { max-width: 100%; }
 .listrow--check .listrow__marker { flex: 0 0 26px; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); border: 1.5px solid currentColor; border-radius: 50%; margin-top: 1px; font-size: 0; }
 .listrow--check .listrow__marker svg { width: 13px; height: 13px; display: block; }
 .band--light .listrow--check .listrow__marker { color: var(--accent-deep); }
+/* Two-line list items: bold title + supporting description */
+.listrow__title { display: block; font-weight: 600; font-size: 16px; line-height: 1.35; color: var(--ink); }
+.listrow__desc { display: block; font-size: 14.5px; line-height: 1.5; color: var(--ink-62); margin-top: 5px; }
+.band--light .listrow__title { color: var(--ink-dark); }
+.band--light .listrow__desc { color: var(--ink-dark-60); }
 
 /* NumberedList (The pattern) */
 .numlist { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
