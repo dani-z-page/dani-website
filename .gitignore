@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# editor / misc
+*.pem
+*.log
+
+# local dev config (Claude Code launch settings)
+.claude/
+
+# generated deliverables — kept on Desktop, regenerated on request, not part of the published site
+*.pdf
+
+# internal reference docs — not for public serving
+design_handoff_website_v3/
+PHOTO-BRIEF.md
