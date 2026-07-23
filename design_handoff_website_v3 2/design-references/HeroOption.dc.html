@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+</helmet>
+<div style="width:100%; font-family:'Instrument Sans',sans-serif; border-radius:8px; overflow:hidden; box-shadow:0 30px 80px -30px rgba(0,0,0,0.35);">
+  <div style="background:{{ bg }}; color:{{ ink }};">
+    <!-- nav -->
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:26px 64px; border-bottom:1px solid {{ hairline }};">
+      <div style="display:flex; flex-direction:column; gap:3px;">
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.14em;">DANIELLE ZIMMERMAN</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; color:{{ muted }};">FRACTIONAL GROWTH EXECUTIVE · B2B SAAS</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:30px;">
+        <span style="font-size:14px; color:{{ muted }};">How I work</span>
+        <span style="font-size:14px; color:{{ muted }};">Results</span>
+        <span style="font-size:14px; color:{{ muted }};">About</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.04em; padding:10px 16px; border-radius:4px; background:{{ btnBg }}; color:{{ btnColor }}; border:{{ btnBorder }};">Start a conversation</span>
+      </div>
+    </div>
+    <!-- hero -->
+    <div style="padding:76px 64px 8px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:{{ accent }}; margin-bottom:26px;">Fractional Growth Executive · B2B SaaS</div>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:66px; line-height:1.0; letter-spacing:-0.025em; margin:0 0 30px; max-width:15ch; text-wrap:balance;">Growth stalled. The real problem crosses departments.</h1>
+      <p style="font-size:21px; line-height:1.5; margin:0 0 20px; max-width:62ch; color:{{ ink }};">I help B2B SaaS leadership teams figure out where growth is really breaking down—and build the fix across Product, GTM, Customer Success, data, and AI.</p>
+      <p style="font-size:17px; line-height:1.55; margin:0 0 38px; max-width:58ch; color:{{ muted }};">Your customers experience one company. Your organization manages departments. Growth stalls in the gaps between them.</p>
+      <div style="display:flex; align-items:center; gap:28px;">
+        <span style="font-weight:600; font-size:15.5px; padding:15px 28px; border-radius:5px; background:{{ btnBg }}; color:{{ btnColor }}; border:{{ btnBorder }};">Tell me where growth stalled</span>
+        <span style="font-size:15px; color:{{ ink }}; border-bottom:1px solid {{ accent }}; padding-bottom:2px;">See how I work →</span>
+      </div>
+    </div>
+    <!-- graphic band -->
+    <div style="padding:34px 56px 30px;">
+      <dc-import name="ClarityGraphic" ink-color="{{ ink }}" accent-color="{{ accent }}" faint-color="{{ faint }}" sub-color="{{ muted }}" label="{{ endpointLabel }}" hint-size="100%,300px"></dc-import>
+    </div>
+    <!-- proof band -->
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid {{ hairline }};">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="padding:30px 40px; border-right:1px solid {{ hairline }};">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:40px; letter-spacing:-0.02em; color:{{ accent }}; line-height:1;">{{ s.num }}</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.03em; color:{{ muted }}; margin-top:12px; line-height:1.35;">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:840},&quot;bg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0b0b0c&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ink&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#f4f2ee&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;muted&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;oklch(0.74 0.11 190)&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;faint&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;hairline&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;btnBg&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;btnColor&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;btnBorder&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;endpointLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;One source of truth&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      bg: p.bg ?? '#0b0b0c',
+      ink: p.ink ?? '#f4f2ee',
+      muted: p.muted ?? 'rgba(244,242,238,0.6)',
+      accent: p.accent ?? 'oklch(0.74 0.11 190)',
+      faint: p.faint ?? 'rgba(244,242,238,0.26)',
+      hairline: p.hairline ?? 'rgba(244,242,238,0.12)',
+      btnBg: p.btnBg ?? 'oklch(0.74 0.11 190)',
+      btnColor: p.btnColor ?? '#0b0b0c',
+      btnBorder: p.btnBorder ?? 'none',
+      endpointLabel: p.endpointLabel ?? 'One source of truth',
+      stats: [
+        { num: '3×', label: 'AI-guided product adoption' },
+        { num: '67%', label: 'trial-to-paid conversion lift' },
+        { num: '30%', label: 'NRR increase' },
+        { num: '23% YoY', label: 'expansion revenue growth' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

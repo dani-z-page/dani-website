@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#e7e6e2; }
+  a { color:inherit; }
+</style>
+</helmet>
+<section style="padding:80px 90px; font-family:'Instrument Sans',sans-serif; color:#1a1a17;">
+  <div style="max-width:760px; margin-bottom:64px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8a867c; margin-bottom:18px;">Turn 1 · Hero direction + new graphic</div>
+    <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:40px; line-height:1.05; letter-spacing:-0.02em; margin:0 0 18px;">From chaos to a single source of truth.</h2>
+    <p style="font-size:17px; line-height:1.6; color:#514e46; margin:0; max-width:64ch;">The teal “signal” graphic is replaced by a hand-drawn tangle: departments each chasing growth alone, weaving through noise, then resolving into one clean line — your single source of truth about the customer. It draws itself on load; hit <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">↻ Replay</span> to watch it again. Same copy, fonts, and layout as today — the three cards only differ by background. Compare <a href="#1a">1a</a>, <a href="#1b">1b</a>, <a href="#1c">1c</a>.</p>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:72px; align-items:flex-start;">
+    <div id="1a" style="width:1240px;">
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:20px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.04em; background:#1a1a17; color:#fff; padding:5px 11px; border-radius:4px;">1A</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.01em;">Signature black, refined</span>
+        <span style="font-size:15px; color:#6d695f;">— your current mood, tightened. Bold and “cool,” warmed slightly off pure #000.</span>
+      </div>
+      <dc-import name="HeroOption" bg="#0b0b0c" ink="#f4f2ee" muted="rgba(244,242,238,0.6)" accent="oklch(0.74 0.11 190)" faint="rgba(244,242,238,0.26)" hairline="rgba(244,242,238,0.12)" btn-bg="oklch(0.74 0.11 190)" btn-color="#0b0b0c" btn-border="none" endpoint-label="One source of truth" hint-size="1240px,860px"></dc-import>
+    </div>
+
+    <div id="1b" style="width:1240px;">
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:20px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.04em; background:#1a1a17; color:#fff; padding:5px 11px; border-radius:4px;">1B</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.01em;">Warm editorial light</span>
+        <span style="font-size:15px; color:#6d695f;">— ink on warm paper. Modern, confident, harder to call “overdone.”</span>
+      </div>
+      <dc-import name="HeroOption" bg="#f4f1ea" ink="#17160f" muted="#6f6a5e" accent="oklch(0.52 0.12 195)" faint="rgba(23,22,15,0.2)" hairline="rgba(23,22,15,0.12)" btn-bg="#17160f" btn-color="#f4f1ea" btn-border="none" endpoint-label="One source of truth" hint-size="1240px,860px"></dc-import>
+    </div>
+
+    <div id="1c" style="width:1240px;">
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:20px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.04em; background:#1a1a17; color:#fff; padding:5px 11px; border-radius:4px;">1C</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.01em;">Deep ink, not pure black</span>
+        <span style="font-size:15px; color:#6d695f;">— a dark teal-slate. Keeps the drama; reads intentional and premium, not default.</span>
+      </div>
+      <dc-import name="HeroOption" bg="#172023" ink="#eef1f0" muted="rgba(238,241,240,0.6)" accent="oklch(0.8 0.12 190)" faint="rgba(238,241,240,0.24)" hairline="rgba(238,241,240,0.12)" btn-bg="transparent" btn-color="oklch(0.8 0.12 190)" btn-border="1px solid oklch(0.8 0.12 190)" endpoint-label="One source of truth" hint-size="1240px,860px"></dc-import>
+    </div>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>
