@@ -354,6 +354,8 @@ img, svg { max-width: 100%; }
 /* Chips — generalize to both bands */
 .chip { color: var(--accent); border: 1px solid rgba(238,241,240,0.18); }
 .band--light .chip { color: var(--accent-deep); border-color: var(--chip-border); }
+/* Case-study chips always sit on cream cards — keep them legible on any band */
+.case-card .chip { color: var(--accent-deep); border-color: var(--chip-border); }
 
 /* Detailed case (Results) — full-width on alternating bands */
 .case-detail__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 3.4vw, 36px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 36px; max-width: 26ch; }
