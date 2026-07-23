@@ -394,15 +394,10 @@ img, svg { max-width: 100%; }
 .contact-row { font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.01em; color: var(--ink-72); }
 .contact-row span { color: var(--ink-50); }
 
-/* Contact hero — intro left, form card right */
-.contact-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+/* Contact hero — intro left, form right */
+.contact-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .contact-hero__intro { padding-top: 6px; }
-.contact-hero__form { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 30px 32px 34px; }
-.contact-hero__form .cform__input { background: var(--bg); }
-@media (max-width: 900px) {
-  .contact-hero { grid-template-columns: 1fr; gap: 44px; }
-  .contact-hero__form { padding: 26px 22px 30px; }
-}
+@media (max-width: 900px) { .contact-hero { grid-template-columns: 1fr; gap: 48px; } }
 
 @media (max-width: 900px) {
   .move { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
