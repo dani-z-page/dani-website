@@ -447,5 +447,5 @@ img, svg { max-width: 100%; }
 
 /* About hero portrait (Deep Ink) */
 .about-hero { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: start; }
-.about-portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; border-radius: 8px; border: 1px solid var(--hairline); display: block; }
+.about-portrait { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 8px; border: 1px solid var(--hairline); display: block; }
 @media (max-width: 900px) { .about-hero { grid-template-columns: 1fr; gap: 36px; max-width: 460px; } }
