@@ -247,6 +247,8 @@ img, svg { max-width: 100%; }
 .band--light .step-card__label { color: var(--accent-deep); }
 .step-card__body { font-size: 15px; line-height: 1.55; color: var(--ink-72); margin: 0; }
 .band--light .step-card__body { color: var(--ink-dark-72); }
+.step-card__note { font-size: 13.5px; font-style: italic; line-height: 1.45; color: var(--ink-62); margin: 14px 0 0; }
+.band--light .step-card__note { color: var(--accent-deep); }
 .method__intro { font-size: 17px; line-height: 1.6; margin: 0 0 56px; max-width: 70ch; }
 .band--light .method__intro { color: var(--ink-dark-70); }
 .method__foot { font-size: 15px; margin: 44px 0 0; }
