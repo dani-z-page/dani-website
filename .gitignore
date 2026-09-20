@@ -12,6 +12,6 @@
 *.pdf
 
 # internal reference docs — not for public serving
-design_handoff_website_v3/
+design_handoff_website_v3*/
 PHOTO-BRIEF.md
 WEBSITE-COPY.md
