@@ -1,0 +1,79 @@
+{
+  "$description": "Deep Ink — design tokens for daniellezimmerman.co. W3C Design Tokens Community Group (DTCG) format. Colors are hex (8-digit hex encodes alpha); dimensions are px strings. Source of truth: assets/css/styles.css :root.",
+  "color": {
+    "$description": "Deep Ink palette: ink-black dark theme, warm-paper light bands, one teal accent.",
+    "surface": {
+      "ink-black": { "$type": "color", "$value": "#172023", "$description": "Page background (dark theme). CSS: --bg" },
+      "surface":   { "$type": "color", "$value": "#1c2629", "$description": "Raised surface — nav, closing band. CSS: --surface" },
+      "card":      { "$type": "color", "$value": "#1e292c", "$description": "Cards on dark. CSS: --card" }
+    },
+    "paper": {
+      "base": { "$type": "color", "$value": "#f2eee4", "$description": "Warm-paper light-band background. CSS: --bg-light" },
+      "card": { "$type": "color", "$value": "#fbf8f1", "$description": "Cards on cream. CSS: --card-light" }
+    },
+    "accent": {
+      "base":  { "$type": "color", "$value": "#2fd4cb", "$description": "Teal accent on dark. oklch(0.8 0.12 190). CSS: --accent" },
+      "hover": { "$type": "color", "$value": "#57e0d6", "$description": "Accent hover. oklch(0.88 0.11 190). CSS: --accent-hover" },
+      "deep":  { "$type": "color", "$value": "#12867f", "$description": "Teal accent on cream. oklch(0.5 0.13 195). CSS: --accent-deep" }
+    },
+    "ink": {
+      "$description": "Near-white text on dark (#eef1f0) at decreasing opacity; 8-digit hex encodes alpha.",
+      "100": { "$type": "color", "$value": "#eef1f0",   "$description": "CSS: --ink" },
+      "85":  { "$type": "color", "$value": "#eef1f0d9", "$description": "CSS: --ink-85" },
+      "82":  { "$type": "color", "$value": "#eef1f0d1", "$description": "CSS: --ink-82" },
+      "80":  { "$type": "color", "$value": "#eef1f0cc", "$description": "CSS: --ink-80" },
+      "72":  { "$type": "color", "$value": "#eef1f0b8", "$description": "Body copy on dark. CSS: --ink-72" },
+      "66":  { "$type": "color", "$value": "#eef1f0a8", "$description": "CSS: --ink-66" },
+      "62":  { "$type": "color", "$value": "#eef1f09e", "$description": "Secondary on dark. CSS: --ink-62" },
+      "55":  { "$type": "color", "$value": "#eef1f08c", "$description": "CSS: --ink-55" },
+      "50":  { "$type": "color", "$value": "#eef1f080", "$description": "Muted on dark. CSS: --ink-50" },
+      "40":  { "$type": "color", "$value": "#eef1f066", "$description": "CSS: --ink-40" },
+      "24":  { "$type": "color", "$value": "#eef1f03d", "$description": "Faint. CSS: --faint" }
+    },
+    "ink-dark": {
+      "$description": "Warm near-black text on cream (#1a1810) at decreasing opacity.",
+      "100": { "$type": "color", "$value": "#1a1810",   "$description": "CSS: --ink-dark" },
+      "78":  { "$type": "color", "$value": "#1a1810c7", "$description": "CSS: --ink-dark-78" },
+      "74":  { "$type": "color", "$value": "#1a1810bd", "$description": "CSS: --ink-dark-74" },
+      "72":  { "$type": "color", "$value": "#1a1810b8", "$description": "CSS: --ink-dark-72" },
+      "70":  { "$type": "color", "$value": "#1a1810b3", "$description": "Body copy on cream. CSS: --ink-dark-70" },
+      "66":  { "$type": "color", "$value": "#1a1810a8", "$description": "CSS: --ink-dark-66" },
+      "60":  { "$type": "color", "$value": "#1a181099", "$description": "Secondary on cream. CSS: --ink-dark-60" },
+      "50":  { "$type": "color", "$value": "#1a181080", "$description": "Muted on cream. CSS: --ink-dark-50" }
+    },
+    "line": {
+      "hairline":      { "$type": "color", "$value": "#eef1f01a", "$description": "Divider on dark. CSS: --hairline" },
+      "hairline-dark": { "$type": "color", "$value": "#1a181021", "$description": "Divider on cream. CSS: --hairline-dark" }
+    }
+  },
+  "font": {
+    "family": {
+      "display": { "$type": "fontFamily", "$value": ["Bricolage Grotesque", "sans-serif"], "$description": "Headlines & numerals. CSS: --font-display" },
+      "body":    { "$type": "fontFamily", "$value": ["Instrument Sans", "sans-serif"], "$description": "Body & buttons. CSS: --font-body" },
+      "mono":    { "$type": "fontFamily", "$value": ["JetBrains Mono", "ui-monospace", "monospace"], "$description": "Labels, metas, footer, captions. CSS: --font-mono" }
+    },
+    "weight": {
+      "regular":   { "$type": "fontWeight", "$value": 400 },
+      "medium":    { "$type": "fontWeight", "$value": 500 },
+      "semibold":  { "$type": "fontWeight", "$value": 600 },
+      "bold":      { "$type": "fontWeight", "$value": 700 },
+      "extrabold": { "$type": "fontWeight", "$value": 800 }
+    },
+    "size": {
+      "$description": "Desktop type scale (maximum sizes; H1/H2 clamp down on small screens).",
+      "h1":      { "$type": "dimension", "$value": "68px", "$description": "Page headlines" },
+      "h2":      { "$type": "dimension", "$value": "40px", "$description": "Section headings" },
+      "h2-cta":  { "$type": "dimension", "$value": "46px", "$description": "Closing-CTA heading" },
+      "h3":      { "$type": "dimension", "$value": "23px", "$description": "Card titles" },
+      "subhead": { "$type": "dimension", "$value": "21px" },
+      "body":    { "$type": "dimension", "$value": "17px", "$description": "Primary body copy" },
+      "body-sm": { "$type": "dimension", "$value": "15px", "$description": "Small / card body" },
+      "eyebrow": { "$type": "dimension", "$value": "13px", "$description": "Uppercase mono labels" }
+    }
+  },
+  "radius": {
+    "sm": { "$type": "dimension", "$value": "4px", "$description": "Chips, small controls" },
+    "md": { "$type": "dimension", "$value": "8px", "$description": "Cards" },
+    "lg": { "$type": "dimension", "$value": "12px", "$description": "Large panels" }
+  }
+}
