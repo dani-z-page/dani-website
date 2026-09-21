@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style Guide · Deep Ink | Danielle Zimmerman</title>
+  <meta name="description" content="The Deep Ink design system behind daniellezimmerman.co — colors, type, and components.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+  <!-- The site's real stylesheet: this page always matches production -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=14">
+  <style>
+    /* ---- Style-guide scaffolding (page-specific; NOT part of the site's component CSS) ---- */
+    .sg-wrap { max-width: 1120px; margin: 0 auto; padding-inline: 40px; }
+    .sg-head { padding: 44px 0 4px; border-bottom: 1px solid var(--hairline); }
+    .sg-back { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+    .sg-title { font-family: var(--font-display); font-weight: 800; font-size: 46px; letter-spacing: -0.02em; line-height: 1.02; margin: 14px 0 10px; }
+    .sg-sub { color: var(--ink-62); font-size: 16px; line-height: 1.55; max-width: 64ch; margin: 0 0 40px; }
+    .sg-section { padding: 56px 0; border-bottom: 1px solid var(--hairline); }
+    .sg-section:last-of-type { border-bottom: none; }
+    .sg-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+    .sg-h { font-family: var(--font-display); font-weight: 800; font-size: 30px; letter-spacing: -0.02em; margin: 0 0 10px; }
+    .sg-note { color: var(--ink-55); font-size: 14.5px; line-height: 1.55; max-width: 68ch; margin: 0 0 28px; }
+    .sg-group { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-50); margin: 34px 0 14px; }
+
+    /* swatches */
+    .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
+    .sg-swatch { border: 1px solid var(--hairline); border-radius: 10px; overflow: hidden; background: var(--card); }
+    .sg-chip { height: 88px; border-bottom: 1px solid var(--hairline); }
+    .sg-swatch__meta { padding: 12px 14px 14px; }
+    .sg-swatch__name { font-size: 14px; color: var(--ink); font-weight: 600; }
+    .sg-swatch__code { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-55); margin-top: 4px; }
+    .sg-swatch__code b { color: var(--ink-72); font-weight: 400; text-transform: uppercase; }
+
+    /* text token demos */
+    .sg-texts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .sg-texts__panel { border: 1px solid var(--hairline); border-radius: 10px; padding: 22px 24px; }
+    .sg-texts__panel--cream { background: var(--bg-light); border-color: var(--hairline-dark); }
+    .sg-texts p { margin: 0 0 8px; font-size: 16px; }
+    .sg-texts .sg-tk { font-family: var(--font-mono); font-size: 11px; }
+
+    /* type specimens + scale */
+    .sg-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .sg-spec { border: 1px solid var(--hairline); border-radius: 10px; padding: 24px; }
+    .sg-spec__aa { font-size: 60px; line-height: 1; color: var(--ink); margin-bottom: 16px; }
+    .sg-spec__name { font-size: 15px; color: var(--ink); font-weight: 600; }
+    .sg-spec__meta { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-55); margin-top: 5px; line-height: 1.5; }
+    .sg-scale > div { display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-top: 1px solid var(--hairline); }
+    .sg-scale > div:first-child { border-top: none; }
+    .sg-scale__label { font-family: var(--font-mono); font-size: 11px; color: var(--ink-55); flex: 0 0 140px; }
+
+    /* component demo captions + rows */
+    .sg-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-50); margin: 34px 0 16px; }
+    .band--light .sg-cap { color: var(--ink-dark-50); }
+    .sg-row { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+
+    @media (max-width: 780px) {
+      .sg-texts, .sg-specs { grid-template-columns: 1fr; }
+      .sg-wrap { padding-inline: 24px; }
+      .sg-scale > div { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .sg-scale__label { flex-basis: auto; }
+      .sg-title { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="sg-head sg-wrap">
+    <a class="sg-back" href="index.html">← Back to site</a>
+    <h1 class="sg-title">Deep Ink — Style Guide</h1>
+    <p class="sg-sub">The brand system behind daniellezimmerman.co: colors, type, and components. This page renders live from the site's own stylesheet (<code>assets/css/styles.css</code>), so it always matches what's in production.</p>
+  </header>
+
+  <!-- ===== COLORS ===== -->
+  <section class="sg-section sg-wrap">
+    <p class="sg-eyebrow">01 · Color</p>
+    <h2 class="sg-h">The Deep Ink palette</h2>
+    <p class="sg-note">An ink-black dark theme, warm-paper light bands, and one teal accent. The accent is defined in <b>oklch</b> (a perceptually-even color space) with a hex fallback, which keeps it consistent everywhere it appears.</p>
+
+    <div class="sg-group">Surfaces — dark theme</div>
+    <div class="sg-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--bg)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Ink Black</div><div class="sg-swatch__code">--bg · <b>#172023</b></div><div class="sg-swatch__code">page background</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--surface)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Surface</div><div class="sg-swatch__code">--surface · <b>#1C2629</b></div><div class="sg-swatch__code">nav, closing band</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--card)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Card</div><div class="sg-swatch__code">--card · <b>#1E292C</b></div><div class="sg-swatch__code">cards on dark</div></div></div>
+    </div>
+
+    <div class="sg-group">Warm paper — light bands</div>
+    <div class="sg-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--bg-light)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Paper</div><div class="sg-swatch__code">--bg-light · <b>#F2EEE4</b></div><div class="sg-swatch__code">cream band background</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--card-light)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Paper Card</div><div class="sg-swatch__code">--card-light · <b>#FBF8F1</b></div><div class="sg-swatch__code">cards on cream</div></div></div>
+    </div>
+
+    <div class="sg-group">Accent — teal</div>
+    <div class="sg-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--accent)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Accent</div><div class="sg-swatch__code">--accent · <b>#2FD4CB</b></div><div class="sg-swatch__code">oklch(0.8 0.12 190) · on dark</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--accent-hover)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Accent Hover</div><div class="sg-swatch__code">--accent-hover · <b>#57E0D6</b></div><div class="sg-swatch__code">oklch(0.88 0.11 190)</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:var(--accent-deep)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Accent Deep</div><div class="sg-swatch__code">--accent-deep · <b>#12867F</b></div><div class="sg-swatch__code">oklch(0.5 0.13 195) · on cream</div></div></div>
+    </div>
+
+    <div class="sg-group">Text — ink</div>
+    <div class="sg-texts">
+      <div class="sg-texts__panel">
+        <p style="color:var(--ink)">Ink 100% <span class="sg-tk" style="color:var(--ink-55)">--ink</span></p>
+        <p style="color:var(--ink-85)">Ink 85% <span class="sg-tk" style="color:var(--ink-55)">--ink-85</span></p>
+        <p style="color:var(--ink-72)">Ink 72% — body copy <span class="sg-tk" style="color:var(--ink-55)">--ink-72</span></p>
+        <p style="color:var(--ink-62)">Ink 62% — secondary <span class="sg-tk" style="color:var(--ink-55)">--ink-62</span></p>
+        <p style="color:var(--ink-50);margin:0">Ink 50% — muted <span class="sg-tk">--ink-50</span></p>
+      </div>
+      <div class="sg-texts__panel sg-texts__panel--cream">
+        <p style="color:var(--ink-dark)">Ink Dark 100% <span class="sg-tk" style="color:var(--ink-dark-50)">--ink-dark</span></p>
+        <p style="color:var(--ink-dark-78)">Ink Dark 78% <span class="sg-tk" style="color:var(--ink-dark-50)">--ink-dark-78</span></p>
+        <p style="color:var(--ink-dark-70)">Ink Dark 70% — body copy <span class="sg-tk" style="color:var(--ink-dark-50)">--ink-dark-70</span></p>
+        <p style="color:var(--ink-dark-60)">Ink Dark 60% — secondary <span class="sg-tk" style="color:var(--ink-dark-50)">--ink-dark-60</span></p>
+        <p style="color:var(--ink-dark-50);margin:0">Ink Dark 50% — muted <span class="sg-tk">--ink-dark-50</span></p>
+      </div>
+    </div>
+    <p class="sg-note" style="margin-top:14px">Hairlines: <b>--hairline</b> <code>rgba(238,241,240,.10)</code> on dark · <b>--hairline-dark</b> <code>rgba(26,24,16,.13)</code> on cream.</p>
+  </section>
+
+  <!-- ===== TYPOGRAPHY ===== -->
+  <section class="sg-section sg-wrap">
+    <p class="sg-eyebrow">02 · Typography</p>
+    <h2 class="sg-h">Three typefaces</h2>
+    <p class="sg-note">All three load free from Google Fonts. Display for headlines and numerals, a clean sans for body, and mono for the small uppercase labels that give the site its editorial feel.</p>
+
+    <div class="sg-specs">
+      <div class="sg-spec"><div class="sg-spec__aa" style="font-family:var(--font-display);font-weight:800">Aa</div><div class="sg-spec__name">Bricolage Grotesque</div><div class="sg-spec__meta">--font-display<br>Weights 400–800 · headlines &amp; numerals</div></div>
+      <div class="sg-spec"><div class="sg-spec__aa" style="font-family:var(--font-body);font-weight:500">Aa</div><div class="sg-spec__name">Instrument Sans</div><div class="sg-spec__meta">--font-body<br>400 / 500 / 600 + italic · body &amp; buttons</div></div>
+      <div class="sg-spec"><div class="sg-spec__aa" style="font-family:var(--font-mono);font-weight:500">Aa</div><div class="sg-spec__name">JetBrains Mono</div><div class="sg-spec__meta">--font-mono<br>400 / 500 + italic · labels, metas, footer</div></div>
+    </div>
+
+    <div class="sg-group">Type scale</div>
+    <div class="sg-scale">
+      <div><span class="sg-scale__label">H1 · 68 / 800</span><span class="h1" style="margin:0;max-width:none">Growth, in focus</span></div>
+      <div><span class="sg-scale__label">H2 · 40 / 800</span><span class="h2" style="margin:0;max-width:none">A section heading</span></div>
+      <div><span class="sg-scale__label">H3 · 23 / 700</span><span class="h3" style="margin:0">A card title</span></div>
+      <div><span class="sg-scale__label">Subhead · 21</span><span class="subhead" style="margin:0;max-width:none">Supporting subhead copy</span></div>
+      <div><span class="sg-scale__label">Body · 17</span><span class="body" style="margin:0;max-width:none">Paragraph body text.</span></div>
+      <div><span class="sg-scale__label">Eyebrow · 13 mono</span><span class="eyebrow" style="margin:0">Uppercase label</span></div>
+    </div>
+  </section>
+
+  <!-- ===== COMPONENTS (DARK) ===== -->
+  <section class="sg-section sg-wrap">
+    <p class="sg-eyebrow">03 · Components</p>
+    <h2 class="sg-h">On the dark theme</h2>
+    <p class="sg-note">The reusable pieces the site is built from. The cream band below shows how the same components adapt to warm paper.</p>
+
+    <p class="sg-cap">Buttons &amp; links</p>
+    <div class="sg-row">
+      <a class="btn-ghost" href="#" onclick="return false">Ghost button</a>
+      <a class="btn-ghost btn-ghost--cta" href="#" onclick="return false">Primary CTA</a>
+      <a class="btn-ghost btn-ghost--nav" href="#" onclick="return false">Nav button</a>
+      <a class="link-underline" href="#" onclick="return false">Underline link</a>
+      <a class="link-mono" href="#" onclick="return false">Mono link →</a>
+    </div>
+
+    <p class="sg-cap">Eyebrow · heading · body</p>
+    <div>
+      <p class="eyebrow">Eyebrow label</p>
+      <h2 class="h2" style="margin-bottom:16px;max-width:24ch">A section heading in display type</h2>
+      <p class="body" style="max-width:62ch">Primary body copy in Instrument Sans, used for the main paragraphs across the site.</p>
+      <p class="body body--sec" style="max-width:62ch;margin:0">Secondary body copy sits one step quieter for supporting detail.</p>
+    </div>
+
+    <p class="sg-cap">Statement (pull-quote)</p>
+    <blockquote class="statement" style="margin:0">The problem may cross departments. The accountability does not.</blockquote>
+
+    <p class="sg-cap">Proof band</p>
+    <div class="proof">
+      <div class="proof__cell"><div class="proof__num">30%</div><div class="proof__label">NRR increase</div></div>
+      <div class="proof__cell"><div class="proof__num">23% YoY</div><div class="proof__label">expansion revenue growth</div></div>
+      <div class="proof__cell"><div class="proof__num">3×</div><div class="proof__label">AI-guided product adoption</div></div>
+      <div class="proof__cell"><div class="proof__num">67%</div><div class="proof__label">trial-to-paid conversion lift</div></div>
+    </div>
+
+    <p class="sg-cap">Engagement card &amp; step card</p>
+    <div class="sg-row" style="align-items:flex-start;gap:28px">
+      <article class="eng-card" style="max-width:340px">
+        <div class="eng-card__meta">Fixed fee · 2–3 weeks</div>
+        <h3 class="h3">GTM Operating Model Diagnostic</h3>
+        <p class="eng-card__body">A focused, first-principles assessment of how the customer journey, organization, and economics are helping—or constraining—growth.</p>
+        <ul class="eng-card__items">
+          <li class="eng-card__item"><span>Customer journey and value realization</span></li>
+          <li class="eng-card__item"><span>Segmentation, coverage, and cost-to-serve</span></li>
+        </ul>
+        <p class="eng-card__emph">The plan is yours whether or not we continue.</p>
+        <a class="eng-card__cta" href="#" onclick="return false">Discuss a diagnostic →</a>
+      </article>
+      <div class="step-card" style="max-width:300px">
+        <div class="step-card__label">01 · DIAGNOSE + STABILIZE</div>
+        <p class="step-card__body">Map customers, revenue, renewals, and support demand while bringing urgent risks under control.</p>
+        <p class="step-card__note">Shared diagnosis and immediate control</p>
+      </div>
+    </div>
+
+    <p class="sg-cap">Checklist (title + description)</p>
+    <div class="listrow listrow--check" style="max-width:640px">
+      <div class="listrow__item"><span class="listrow__marker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5 10 16.5 18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="listrow__text"><span class="listrow__title">Your GTM motion has outgrown the way it was built</span><span class="listrow__desc">The scrappy approach that got you here now leans too heavily on heroics and institutional knowledge.</span></span></div>
+      <div class="listrow__item"><span class="listrow__marker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5 10 16.5 18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="listrow__text"><span class="listrow__title">Customer-facing teams aren't operating as one system</span><span class="listrow__desc">Gaps in ownership, signals, and handoffs create friction and missed risk.</span></span></div>
+    </div>
+
+    <p class="sg-cap">Chips</p>
+    <div class="sg-row">
+      <span class="chip">NRR +30%</span>
+      <span class="chip">Expansion +23% YoY</span>
+      <span class="chip">NPS +15 pts</span>
+    </div>
+  </section>
+
+  <!-- ===== COMPONENTS (CREAM) ===== -->
+  <section class="band band--light" aria-label="Components on the cream band">
+    <div class="sg-wrap" style="padding-block:56px">
+      <p class="eyebrow">04 · Cream band</p>
+      <h2 class="h2" style="margin-bottom:12px;max-width:24ch">The same components, on warm paper</h2>
+      <p class="body" style="max-width:62ch">On a <code>.band--light</code> section, text flips to warm near-black ink and the accent shifts to its deep teal for contrast. Everything else stays the same.</p>
+
+      <p class="sg-cap">Statement · chips</p>
+      <blockquote class="statement" style="margin:0 0 28px">Evidence, not theater.</blockquote>
+      <div class="sg-row" style="margin-bottom:8px">
+        <span class="chip">AI adoption 3×</span>
+        <span class="chip">Trial-to-paid +67%</span>
+      </div>
+
+      <p class="sg-cap">Checklist</p>
+      <div class="listrow listrow--check" style="max-width:640px;margin-bottom:8px">
+        <div class="listrow__item"><span class="listrow__marker" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5 10 16.5 18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="listrow__text"><span class="listrow__title">Markers and titles adapt automatically</span><span class="listrow__desc">The circle-check turns deep teal; titles and descriptions turn to dark ink.</span></span></div>
+      </div>
+
+      <p class="sg-cap">Paper card</p>
+      <article class="case-card" style="max-width:380px">
+        <h3 class="case-card__title">Product complexity was suppressing conversion.</h3>
+        <div class="case-card__label">What changed</div>
+        <p class="case-card__body">Rebuilt onboarding around validated customer intent and an AI-guided experience.</p>
+        <div class="case-card__chips"><span class="chip">AI adoption 3×</span><span class="chip">Trial-to-paid +67%</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="sg-wrap" style="padding:40px 0 60px;color:var(--ink-40);font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.03em">
+    Deep Ink style guide · renders live from assets/css/styles.css · <a href="index.html" style="color:var(--ink-55)">daniellezimmerman.co</a>
+  </footer>
+
+</body>
+</html>
