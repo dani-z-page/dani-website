@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email Signature · Zimmerman Advisory</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@0,400;0,500;0,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=14">
+  <style>
+    .es-wrap { max-width: 900px; margin: 0 auto; padding: 44px 40px 80px; }
+    .es-back { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+    .es-title { font-family: var(--font-display); font-weight: 800; font-size: 44px; letter-spacing: -0.02em; margin: 14px 0 10px; }
+    .es-sub { color: var(--ink-62); font-size: 16px; line-height: 1.55; max-width: 64ch; margin: 0 0 36px; }
+    .es-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 30px 0 16px; }
+    .es-preview { background: #ffffff; border: 1px solid var(--hairline); border-radius: 12px; padding: 34px 30px; }
+    .es-btn { display: inline-block; margin: 18px 0 6px; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: #08201f; background: var(--accent); border: none; border-radius: 8px; padding: 11px 20px; cursor: pointer; }
+    .es-btn:active { transform: translateY(1px); }
+    .es-ok { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-left: 12px; opacity: 0; transition: opacity .2s; }
+    .es-ok.show { opacity: 1; }
+    textarea.es-src { width: 100%; box-sizing: border-box; height: 180px; margin-top: 10px; background: var(--card); color: var(--ink-80); border: 1px solid var(--hairline); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 12px; line-height: 1.5; resize: vertical; }
+    .es-steps { color: var(--ink-72); font-size: 15px; line-height: 1.7; max-width: 74ch; padding-left: 20px; }
+    .es-steps b { color: var(--ink); }
+    .es-steps code { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+    .es-alt { color: var(--ink-62); font-size: 14px; line-height: 1.6; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="es-wrap">
+    <a class="es-back" href="brand.html">← Brand assets</a>
+    <h1 class="es-title">Email Signature</h1>
+    <p class="es-sub">A compact, branded signature that renders in Gmail, Apple Mail, and Outlook. The logo is loaded from your live site, so it appears automatically once this site is deployed.</p>
+
+    <p class="es-eyebrow">Preview</p>
+    <div class="es-preview">
+      <!-- SIGNATURE START -->
+      <table id="sig" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a1810;">
+        <tr>
+          <td style="padding:2px 20px 2px 0;border-right:2px solid #2fd4cb;vertical-align:middle;">
+            <img src="https://daniellezimmerman.co/assets/brand/zimmerman-mark-dark-transparent.png" width="60" height="49" alt="Zimmerman Advisory" style="display:block;border:0;">
+          </td>
+          <td style="padding:2px 0 2px 20px;vertical-align:middle;">
+            <div style="font-size:17px;font-weight:bold;color:#1a1810;letter-spacing:-0.01em;">Danielle Zimmerman</div>
+            <div style="font-size:13px;font-weight:bold;color:#12867f;padding-top:3px;">Fractional Customer &amp; Growth Executive</div>
+            <div style="font-size:12px;color:#5b564d;padding-top:7px;">
+              <a href="https://daniellezimmerman.co" style="color:#12867f;text-decoration:none;font-weight:bold;">daniellezimmerman.co</a>
+              <span style="color:#c8c2b4;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <a href="mailto:danielle@daniellezimmerman.co" style="color:#5b564d;text-decoration:none;">danielle@daniellezimmerman.co</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- SIGNATURE END -->
+    </div>
+
+    <button class="es-btn" id="copyBtn" type="button">Copy signature</button>
+    <span class="es-ok" id="ok">Copied — now paste into your mail settings</span>
+
+    <p class="es-eyebrow">How to install</p>
+    <ul class="es-steps">
+      <li><b>Gmail:</b> click <b>Copy signature</b> above → Gmail <b>⚙ Settings → See all settings → General → Signature</b> → <b>Create new</b> → paste into the box → <b>Save changes</b>.</li>
+      <li><b>Apple Mail:</b> <b>Mail → Settings → Signatures</b>, create one, then paste. If it pastes as plain text, uncheck “Always match my default message font,” then paste again.</li>
+      <li><b>Outlook:</b> <b>File → Options → Mail → Signatures</b> (or, on the web, <b>Settings → Mail → Compose and reply</b>), create a signature and paste.</li>
+    </ul>
+    <p class="es-alt">If pasting the rich version doesn’t stick, copy the raw HTML below instead and use your mail client’s “edit signature HTML / source” option.</p>
+
+    <p class="es-eyebrow">Raw HTML</p>
+    <textarea class="es-src" id="src" readonly spellcheck="false"></textarea>
+
+    <p class="es-alt" style="margin-top:26px">Prefer the full logo instead of the Z mark, a phone number, or a LinkedIn link added? Just tell me and I’ll adjust it.</p>
+  </div>
+
+  <script>
+    const sig = document.getElementById('sig');
+    // fill raw-HTML box from the live signature markup
+    const raw = sig.outerHTML.replace(/\s+/g,' ').replace(/> </g,'>\n<');
+    document.getElementById('src').value = sig.outerHTML;
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        const html = sig.outerHTML;
+        const blob = new Blob([html], {type:'text/html'});
+        const text = new Blob([sig.innerText], {type:'text/plain'});
+        await navigator.clipboard.write([new ClipboardItem({'text/html':blob,'text/plain':text})]);
+      } catch(e) {
+        // fallback: select the rendered node and execCommand copy
+        const r = document.createRange(); r.selectNode(sig);
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        document.execCommand('copy'); s.removeAllRanges();
+      }
+      const ok = document.getElementById('ok'); ok.classList.add('show');
+      setTimeout(()=>ok.classList.remove('show'), 2600);
+    });
+  </script>
+</body>
+</html>
