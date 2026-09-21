@@ -99,7 +99,7 @@ img, svg { max-width: 100%; }
 }
 .nav__brand { display: flex; align-items: center; gap: 13px; color: var(--ink); }
 .nav__brand:hover { color: var(--ink); }
-.nav__mark { flex: none; display: block; height: 34px; width: auto; }
+.nav__mark { flex: none; display: block; height: 42px; width: auto; }
 .nav__text { display: flex; flex-direction: column; gap: 3px; padding-left: 13px; border-left: 2px solid var(--accent); }
 .nav__name { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: 0.14em; }
 .nav__desc { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--ink-55); }
