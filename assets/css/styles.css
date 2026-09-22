@@ -302,12 +302,33 @@ img, svg { max-width: 100%; }
 .footer__right { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.03em; color: var(--ink-40); }
 
 /* =========================================================================
+   Photography
+   ========================================================================= */
+.photoband { position: relative; min-height: 460px; overflow: hidden; display: flex; align-items: flex-end; }
+.photoband img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05) contrast(1.02); }
+.photoband__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,27,30,0.94) 0%, rgba(20,27,30,0.70) 34%, rgba(20,27,30,0.28) 66%, rgba(20,27,30,0.10) 100%); }
+.photoband__inner { position: relative; width: 100%; }
+.photoband__q { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.12; letter-spacing: -0.015em; color: var(--ink); max-width: 24ch; margin: 0; padding-block: 54px; }
+.photoband__q b { color: var(--accent); font-weight: 700; }
+
+.why__portrait { margin-top: 30px; border-radius: 12px; overflow: hidden; max-width: 340px; aspect-ratio: 4 / 5; }
+.why__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; filter: saturate(1.03); }
+
+.cta-photo { position: relative; overflow: hidden; }
+.cta-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; filter: saturate(1.04); }
+.cta-photo__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,27,30,0.80), rgba(20,27,30,0.88)); }
+.cta-photo .section--closing { position: relative; }
+
+/* =========================================================================
    Responsive
    ========================================================================= */
 @media (max-width: 900px) {
   .two-col, .two-col--pov, .numlist, .steps, .cards-3, .cases-2 { grid-template-columns: 1fr; gap: 32px; }
   .numlist { gap: 0; }
   .step-card::before { width: 100%; opacity: 0.24; }
+  .photoband { min-height: 340px; }
+  .photoband__q { font-size: 26px; padding-block: 40px; }
+  .why__portrait { max-width: 100%; margin-top: 24px; }
   .proof { grid-template-columns: repeat(2, 1fr); }
   .proof__cell:nth-child(2) { border-right: none; }
   .proof__cell:nth-child(1), .proof__cell:nth-child(2) { border-bottom: 1px solid var(--hairline); }
